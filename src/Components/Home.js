@@ -64,12 +64,19 @@ function Home() {
           </div>
         ) : (
           <tbody>
-            {drivers.map((item, i) => {
+            {drivers.map((item) => {
               return (
                 <>
                   <tr>
                     <td>{item.name}</td>
-                    <td>{item.birth_year}</td>
+                    <td
+                      style={{
+                        backgroundColor:
+                          item.birth_year === "unknown" ? "#412a2a" : "#212529",
+                      }}
+                    >
+                      {item.birth_year}
+                    </td>
                     <td>{item.height}</td>
                     <td>{item.eye_color}</td>
                     <td>{item.skin_color}</td>

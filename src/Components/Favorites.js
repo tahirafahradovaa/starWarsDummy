@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { starwarsContext } from "./starwarscontext";
 import "./F1.css";
 import toastr from "toastr";
@@ -6,7 +6,7 @@ function Favorites() {
   let { characters, setCharacters } = useContext(starwarsContext);
   let filteredContext = characters.filter((q) => q.name);
   const deleteItem = (item) => {
-    let filteredDelete = characters.filter((q) => q.name != item.name);
+    let filteredDelete = characters.filter((q) => q.name !== item.name);
     setCharacters([...filteredDelete]);
     toastr.info("Removed");
   };
